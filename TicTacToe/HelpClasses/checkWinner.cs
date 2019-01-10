@@ -12,17 +12,23 @@ namespace TicTacToe
 
         public static bool AllFieldsTheSame(int startX, int startY, PlayField board, int dx, int dy)
         {
-            firstField = board.field[startY,startX];
+            // Set first field for comparison
+            firstField = board.field[startX,startY];
+
+            // Check first field for empty
             if (firstField == "")
             {
                 return false;
             }
 
+            // Loop through fields
             for (var i = 0; i < 3; i++)
             {
                 int y = startY + dy * i;
                 int x = startX + dx * i;
-                if (board.field[y,x] != firstField)
+
+                // No Winner if field is not = firstfield
+                if (board.field[x,y] != firstField)
                 {
                     return false;
                 }
@@ -30,6 +36,7 @@ namespace TicTacToe
 
             return true;
         }
+
         public static string SomeoneWins(PlayField board)
         {
             // Check columns
@@ -52,13 +59,13 @@ namespace TicTacToe
                     
             }
 
-            // Check diagonals
+            // Check 1 diagonal
             if (AllFieldsTheSame(0, 0, board, 1, 1))
             {
                 return firstField;
             }
-                
 
+            // Check 2 diagonal
             if (AllFieldsTheSame(2, 0, board, -1, 1))
             {
                 return firstField;
