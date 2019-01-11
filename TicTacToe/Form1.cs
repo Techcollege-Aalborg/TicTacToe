@@ -1,11 +1,4 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace TicTacToe
@@ -13,18 +6,19 @@ namespace TicTacToe
     public partial class TicTacToe : Form
     {
         // Globally used variables
-        String PlayerOneName = "";
-        String PlayerTwoName = "";
-        Player CurrentPlayer;
-        int MaxBricks = 6;
-        int UsedBricks = 0;
-        Button bt;
-        bool NoBricks = false;
-        bool AdvancedVersion = false;
-        bool FieldEmpty;
-        bool MovedBrick = false;
-        bool AIEnabled = false;
-        String OldPlayerName = "";
+        private String PlayerOneName = "";
+
+        private String PlayerTwoName = "";
+        private Player CurrentPlayer;
+        private int MaxBricks = 6;
+        private int UsedBricks = 0;
+        private Button bt;
+        private bool NoBricks = false;
+        private bool AdvancedVersion = false;
+        private bool FieldEmpty;
+        private bool MovedBrick = false;
+        private bool AIEnabled = false;
+        private String OldPlayerName = "";
 
         /// <summary>
         /// Start the game
@@ -36,7 +30,7 @@ namespace TicTacToe
         }
 
         /// <summary>
-        /// Used to set a player 
+        /// Used to set a player
         /// </summary>
         public enum Player
         {
@@ -57,7 +51,7 @@ namespace TicTacToe
         }
 
         /// <summary>
-        /// Change Player name 
+        /// Change Player name
         /// </summary>
         /// <param name="sender"></param>
         /// <param name="e"></param>
@@ -75,13 +69,13 @@ namespace TicTacToe
         private void PlayerTwoNameChanged(object sender, EventArgs e)
         {
             // Saves old playername
-            if(textPlayerTwoName.Text != "AI")
+            if (textPlayerTwoName.Text != "AI")
             {
                 OldPlayerName = textPlayerTwoName.Text;
             }
 
             // Sets new playername
-            PlayerTwoName = textPlayerTwoName.Text;;
+            PlayerTwoName = textPlayerTwoName.Text; ;
         }
 
         /// <summary>
@@ -182,7 +176,7 @@ namespace TicTacToe
         }
 
         /// <summary>
-        /// Resets the game 
+        /// Resets the game
         /// </summary>
         /// <param name="AllReset"></param>
         private void ResetGame(bool AllReset = false)
@@ -196,7 +190,7 @@ namespace TicTacToe
                 UsedBricks = 0;
                 CurrentPlayer = Player.X;
             }
-            // Keeps the score 
+            // Keeps the score
             else
             {
                 NoBricks = false;
@@ -204,7 +198,7 @@ namespace TicTacToe
                 CurrentPlayer = Player.X;
             }
 
-            // Reset all button controls 
+            // Reset all button controls
             foreach (Control con in Controls)
             {
                 if (con is Button)
@@ -215,7 +209,7 @@ namespace TicTacToe
                     {
                         con.Text = "";
                         con.Enabled = true;
-                    }  
+                    }
                 }
             }
         }
@@ -229,9 +223,9 @@ namespace TicTacToe
         /// <param name="e"></param>
         public void GameFieldClick(object sender, EventArgs e)
         {
-           bt = (Button)sender;
+            bt = (Button)sender;
 
-           if (AdvancedVersion == true)
+            if (AdvancedVersion == true)
             {
                 // Check if max bricks have been used.
                 CheckMaxBricks();
@@ -240,7 +234,7 @@ namespace TicTacToe
                 PlaceBrick();
                 CheckForWinner();
             }
-           else
+            else
             {
                 // Checks for the value of the field -> goes to place a brick.
                 CheckFieldValue();
@@ -254,7 +248,7 @@ namespace TicTacToe
                 {
                     AIMoves();
                 }
-                
+
                 // Check for winner -> draw.
                 CheckForWinner();
                 CheckForDraw();
@@ -303,7 +297,6 @@ namespace TicTacToe
                     bt.Enabled = false;
                 }
             }
-
         }
 
         /// <summary>
@@ -349,22 +342,21 @@ namespace TicTacToe
                 MovedBrick = true;
             }
 
-            // If a brick was moved -> add a move 
+            // If a brick was moved -> add a move
             if (MovedBrick == true)
             {
                 UsedBricks--;
             }
         }
 
-
         /// <summary>
-        /// Output a message to the textbox control 
+        /// Output a message to the textbox control
         /// </summary>
         /// <param name="Message">Message to be displayed</param>
         public void AddLogEntry(String Message = "")
         {
             // Append text to the textbox
-            textStatus.AppendText("\n"+Message+"\n");
+            textStatus.AppendText("\n" + Message + "\n");
         }
 
         /// <summary>
@@ -423,7 +415,7 @@ namespace TicTacToe
             CurrentPlayer = EnumLook.Next(CurrentPlayer);
             UsedBricks++;
         }
-        
+
         /// <summary>
         /// Used to extract data into a PlayField class
         /// Uses a HelpClass/ Custom Data Type

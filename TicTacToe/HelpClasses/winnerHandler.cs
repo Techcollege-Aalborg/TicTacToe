@@ -1,8 +1,5 @@
 ﻿using System;
-using System.Collections.Generic;
 using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace TicTacToe
@@ -22,7 +19,7 @@ namespace TicTacToe
         /// <param name="winnerLabel">Score Label</param>
         /// <param name="winnerNameBox">Textbox containing the name of the player</param>
         /// <param name="winner"></param>
-        private  static void DisplayWinner(Control winnerLabel, Control winnerNameBox, string winner)
+        private static void DisplayWinner(Control winnerLabel, Control winnerNameBox, string winner)
         {
             // Set the winner label
             winnerLabel.Text = (Int32.Parse(winnerLabel.Text) + 1).ToString();
@@ -47,7 +44,7 @@ namespace TicTacToe
             playerOneLabel = con.Find("labelPlayerOneScoreShow", false).FirstOrDefault();
             playerTwoLabel = con.Find("labelPlayerTwoScoreShow", false).FirstOrDefault();
 
-            // Based on winner X,O 
+            // Based on winner X,O
             if (winner == "X")
             {
                 if (playerOneName.Text == "")
@@ -72,7 +69,6 @@ namespace TicTacToe
                 }
                 DisplayWinner(playerTwoLabel, playerTwoName, winnerName);
             }
-
         }
     }
 }

@@ -1,8 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿using System.Linq;
 using System.Windows.Forms;
 
 namespace TicTacToe
@@ -10,7 +6,7 @@ namespace TicTacToe
     public class PlayField
     {
         // The tree values is; "X", "", "O"
-        public string[,] field = new string[3,3]; 
+        public string[,] field = new string[3, 3];
 
         /// <summary>
         /// Extracts text data out of the "fields" buttons controls

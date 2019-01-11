@@ -1,8 +1,4 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace TicTacToe
 {
@@ -33,7 +29,7 @@ namespace TicTacToe
             if (g.field[0, 1] == g.field[1, 1] && g.field[1, 1] == g.field[2, 1] && g.field[2, 1] == "O") return "O";
             if (g.field[0, 2] == g.field[1, 2] && g.field[1, 2] == g.field[2, 2] && g.field[2, 2] == "O") return "O";
 
-            // Chech diagnally                               
+            // Chech diagnally
             if (g.field[0, 0] == g.field[1, 1] && g.field[1, 1] == g.field[2, 2] && g.field[2, 2] == "X") return "X";
             if (g.field[2, 0] == g.field[1, 1] && g.field[1, 1] == g.field[2, 0] && g.field[2, 0] == "X") return "X";
 
@@ -50,7 +46,6 @@ namespace TicTacToe
         /// <returns>The number of the button to place the brick in</returns>
         public static string AIDicision(PlayField g)
         {
-
             String button = "";
 
             // Check for winning first
@@ -81,7 +76,7 @@ namespace TicTacToe
             // if (g.field[1, 0] == g.field[1, 2] && g.field[1, 2] == "O" && g.field[1, 1] == "") button = "5";
             // if (g.field[2, 0] == g.field[2, 2] && g.field[2, 2] == "O" && g.field[2, 1] == "") button = "8";
 
-            // Check every colum from top to bottom, both X and O                       
+            // Check every colum from top to bottom, both X and O
             if (g.field[0, 0] == g.field[1, 0] && g.field[1, 0] == "O" && g.field[2, 0] == "") button = "7";
             if (g.field[0, 1] == g.field[1, 1] && g.field[1, 1] == "O" && g.field[2, 2] == "") button = "8";
             if (g.field[0, 2] == g.field[1, 2] && g.field[1, 2] == "O" && g.field[2, 2] == "") button = "9";
@@ -90,7 +85,7 @@ namespace TicTacToe
             // if (g.field2 == g.field5 && g.field5 == "O" && g.field8 == "") button = "8";
             // if (g.field3 == g.field6 && g.field6 == "O" && g.field9 == "") button = "9";
 
-            // Check every colum from bottom to top, both X and O  
+            // Check every colum from bottom to top, both X and O
             if (g.field[2, 0] == g.field[1, 0] && g.field[1, 0] == "O" && g.field[0, 0] == "") button = "1";
             if (g.field[2, 1] == g.field[1, 1] && g.field[1, 1] == "O" && g.field[0, 1] == "") button = "2";
             if (g.field[2, 2] == g.field[1, 2] && g.field[1, 2] == "O" && g.field[0, 2] == "") button = "3";
@@ -108,14 +103,14 @@ namespace TicTacToe
             // if (g.field[0, 1] == g.field[2, 1] && g.field[2, 1] == "O" && g.field[1, 1] == "") button = "5";
             // if (g.field[0, 2] == g.field[2, 2] && g.field[2, 2] == "O" && g.field[1, 1] == "") button = "6";
 
-            // Chech diagnally from top to bottom, both X and O  
+            // Chech diagnally from top to bottom, both X and O
             if (g.field[0, 0] == g.field[1, 1] && g.field[1, 1] == "O" && g.field[2, 2] == "") button = "9";
             if (g.field[0, 2] == g.field[1, 1] && g.field[1, 1] == "O" && g.field[2, 0] == "") button = "7";
 
             // if (g.field1 == g.field5 && g.field5 == "O" && g.field9 == "") button = "9";
             // if (g.field3 == g.field5 && g.field5 == "O" && g.field7 == "") button = "7";
 
-            // Chech diagnally from bottom to top, both X and O 
+            // Chech diagnally from bottom to top, both X and O
             if (g.field[2, 0] == g.field[1, 1] && g.field[1, 1] == "O" && g.field[0, 2] == "") button = "3";
             if (g.field[2, 2] == g.field[1, 1] && g.field[1, 1] == "O" && g.field[0, 0] == "") button = "1";
 
@@ -152,7 +147,7 @@ namespace TicTacToe
                 // if (g.field[1, 0] == g.field[1, 2] && g.field[1, 2] == "O" && g.field[1, 1] == "") button = "5";
                 // if (g.field[2, 0] == g.field[2, 2] && g.field[2, 2] == "O" && g.field[2, 1] == "") button = "8";
 
-                // Check every colum from top to bottom, both X and O                       
+                // Check every colum from top to bottom, both X and O
                 if (g.field[0, 0] == g.field[1, 0] && g.field[1, 0] == "X" && g.field[2, 0] == "") button = "7";
                 if (g.field[0, 1] == g.field[1, 1] && g.field[1, 1] == "X" && g.field[2, 2] == "") button = "8";
                 if (g.field[0, 2] == g.field[1, 2] && g.field[1, 2] == "X" && g.field[2, 2] == "") button = "9";
@@ -161,7 +156,7 @@ namespace TicTacToe
                 // if (g.field2 == g.field5 && g.field5 == "O" && g.field8 == "") button = "8";
                 // if (g.field3 == g.field6 && g.field6 == "O" && g.field9 == "") button = "9";
 
-                // Check every colum from bottom to top, both X and O  
+                // Check every colum from bottom to top, both X and O
                 if (g.field[2, 0] == g.field[1, 0] && g.field[1, 0] == "X" && g.field[0, 0] == "") button = "1";
                 if (g.field[2, 1] == g.field[1, 1] && g.field[1, 1] == "X" && g.field[0, 1] == "") button = "2";
                 if (g.field[2, 2] == g.field[1, 2] && g.field[1, 2] == "X" && g.field[0, 2] == "") button = "3";
@@ -179,14 +174,14 @@ namespace TicTacToe
                 // if (g.field[0, 1] == g.field[2, 1] && g.field[2, 1] == "O" && g.field[1, 1] == "") button = "5";
                 // if (g.field[0, 2] == g.field[2, 2] && g.field[2, 2] == "O" && g.field[1, 1] == "") button = "6";
 
-                // Chech diagnally from top to bottom, both X and O  
+                // Chech diagnally from top to bottom, both X and O
                 if (g.field[0, 0] == g.field[1, 1] && g.field[1, 1] == "X" && g.field[2, 2] == "") button = "9";
                 if (g.field[0, 2] == g.field[1, 1] && g.field[1, 1] == "X" && g.field[2, 0] == "") button = "7";
 
                 // if (g.field1 == g.field5 && g.field5 == "O" && g.field9 == "") button = "9";
                 // if (g.field3 == g.field5 && g.field5 == "O" && g.field7 == "") button = "7";
 
-                // Chech diagnally from bottom to top, both X and O 
+                // Chech diagnally from bottom to top, both X and O
                 if (g.field[2, 0] == g.field[1, 1] && g.field[1, 1] == "X" && g.field[0, 2] == "") button = "3";
                 if (g.field[2, 2] == g.field[1, 1] && g.field[1, 1] == "X" && g.field[0, 0] == "") button = "1";
 
@@ -202,7 +197,7 @@ namespace TicTacToe
 
             return "";
         }
-        
+
         /// <summary>
         /// REALLY OLD CODE!!!
         /// Not Used!
@@ -221,8 +216,6 @@ namespace TicTacToe
                {
                    theWinner = new string[] { textPlayerOneName.Text, (Int32.Parse(labelPlayerOneScoreShow.Text) + 1).ToString() };
                }
-
-
 
                if (Winner == "X")
                {
@@ -253,9 +246,6 @@ namespace TicTacToe
                ResetGame();
            }
 
-
-
-
             // playfield
 
             String[] Text = new string[9] { this.Controls[12].Text, this.Controls[13].Text, this.Controls[14].Text, this.Controls[15].Text, this.Controls[16].Text,
@@ -270,7 +260,7 @@ namespace TicTacToe
             playBoard[2, 0] = field.field[2, 0];
             playBoard[2, 1] = field.field[2, 1];
             playBoard[2, 2] = field.field[2, 2];
-            
+
             // string[,] playBoard = new string[3, 3];
               public string field1;
                     public string field2;
@@ -281,7 +271,7 @@ namespace TicTacToe
                     public string field7;
                     public string field8;
                     public string field9;
-                    
+
                         // Creates a string array where the texts from the button will be placed
             string[,] Text = new string[3,3];
 
@@ -296,7 +286,6 @@ namespace TicTacToe
             Text[2, 1] = con[13].Text;
             Text[2, 2] = con[12].Text;
 
-
             //public char[] field = new char[9];
 
             public PlayField(Control contrls)
@@ -306,7 +295,6 @@ namespace TicTacToe
                         "ccccc"};
                 char[] C = string.Join(string.Empty, S).ToCharArray();
                 char[] charArray = Text.SelectMany(x => x.ToCharArray()).ToArray();
-             
 
             //field[0] = Text[8];
             //field[1] = Text[7];
@@ -321,7 +309,7 @@ namespace TicTacToe
             field[2][0] = Text[2];
             field[2][1] = Text[2];
             field[2][2] = Text[0];
-           
+
             field1 = Text[8];
             field2 = Text[7];
             field3 = Text[6];
@@ -344,7 +332,6 @@ namespace TicTacToe
           field[2][1] = Text[2];
           field[2][2] = Text[1];
 
-
           field[0] = controls[20].Text;
           field[1] = controls[19].Text;
           field[2] = controls[18].Text;
@@ -365,7 +352,6 @@ namespace TicTacToe
               }
           }
           */
-
         }
     }
 }

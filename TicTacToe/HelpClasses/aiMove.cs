@@ -49,7 +49,7 @@ namespace TicTacToe
                 validate = true;
                 return;
             }
-            
+
             return;
         }
 
@@ -82,7 +82,7 @@ namespace TicTacToe
                     yxPos[0] = y;
                     yxPos[1] = x;
                     emptyCount++; // Is this used=??
-                } 
+                }
                 if (board.field[y, x] == "X")
                 {
                     xCount++;
@@ -118,7 +118,6 @@ namespace TicTacToe
         {
             CheckMove(board, controls, player);
             MakeMove(controls);
-
         }
 
         /// <summary>

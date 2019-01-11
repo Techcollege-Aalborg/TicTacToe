@@ -1,8 +1,4 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace TicTacToe
 {
@@ -21,7 +17,7 @@ namespace TicTacToe
             {
                 throw new ArgumentException(String.Format("Argumnent {0} is not an Enum", typeof(T).FullName));
             }
-            
+
             // Gets all the values in the ENUM
             T[] Arr = (T[])Enum.GetValues(src.GetType());
 
