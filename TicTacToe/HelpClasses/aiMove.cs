@@ -109,24 +109,38 @@ namespace TicTacToe
         }
 
         /// <summary>
-        /// AI Move Invoke Handler
+        /// AI Move Invoke Handler.
+        /// Simple Game Mode
         /// </summary>
         /// <param name="board">PlayField Type</param>
-        /// <param name="controls">All form contorls</param>
+        /// <param name="con">All form contorls</param>
         /// <param name="player">String from ENUM</param>
-        public static void Move(PlayField board, Control.ControlCollection controls, string player)
+        public static void Move(PlayField board, Control.ControlCollection con, string player)
         {
-            CheckMove(board, controls, player);
-            MakeMove(controls);
+            CheckMove(board, con, player);
+            MakeMove(con);
+        }
+
+        /// <summary>
+        /// AI Move Invoke Handler.
+        /// Advanced Game Mode
+        /// </summary>
+        /// <param name="board">PlayField Type</param>
+        /// <param name="con">All form controls</param>
+        /// <param name="player">String from ENUM</param>
+        /// <param name="UsedBricks">Current used bricks (int)</param>
+        public static void Move(PlayField board, Control.ControlCollection con, string player, int UsedBricks)
+        {
+
         }
 
         /// <summary>
         /// Checks for counter/winning moves
         /// </summary>
         /// <param name="board">PlayField Type</param>
-        /// <param name="controls">All form controls</param>
+        /// <param name="con">All form controls</param>
         /// <param name="player">String from ENUM</param>
-        public static bool CheckMove(PlayField board, Control.ControlCollection controls, string player)
+        public static bool CheckMove(PlayField board, Control.ControlCollection con, string player)
         {
             currentPlayer = player;
 
@@ -173,13 +187,13 @@ namespace TicTacToe
         /// else makes a random move to an empty brick
         /// </summary>
         /// <param name="win">If a player can win</param>
-        /// <param name="controls"></param>
-        public static void MakeMove(Control.ControlCollection controls)
+        /// <param name="con"></param>
+        public static void MakeMove(Control.ControlCollection con)
         {
             // Counter/Winning move
             if (canWin)
             {
-                ControlMove(controls, yxPos);
+                ControlMove(con, yxPos);
                 moveCon.Text = currentPlayer.ToString();
                 moveCon.Enabled = false;
                 return;
@@ -192,7 +206,7 @@ namespace TicTacToe
                 {
                     yxPos[0] = RandomNumber(0, 3);
                     yxPos[1] = RandomNumber(0, 3);
-                    ControlMove(controls, yxPos);
+                    ControlMove(con, yxPos);
                     if (moveCon.Text == "")
                     {
                         moveCon.Text = currentPlayer.ToString();
@@ -202,6 +216,11 @@ namespace TicTacToe
 
                 return;
             }
+        }
+
+        public static void RemoveAIBrick(Control.ControlCollection con)
+        {
+
         }
 
         /// <summary>
