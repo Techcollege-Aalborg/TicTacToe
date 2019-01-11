@@ -58,7 +58,12 @@
             this.labelPlayerCount = new System.Windows.Forms.Label();
             this.buttonTwoPlayer = new System.Windows.Forms.Button();
             this.textStatus = new System.Windows.Forms.TextBox();
+            this.tabControl1 = new System.Windows.Forms.TabControl();
+            this.tabPage1 = new System.Windows.Forms.TabPage();
+            this.tabPage2 = new System.Windows.Forms.TabPage();
             this.menuStrip1.SuspendLayout();
+            this.tabControl1.SuspendLayout();
+            this.tabPage1.SuspendLayout();
             this.SuspendLayout();
             // 
             // menuStrip1
@@ -68,7 +73,7 @@
             this.setiingsToolStripMenuItem});
             this.menuStrip1.Location = new System.Drawing.Point(0, 0);
             this.menuStrip1.Name = "menuStrip1";
-            this.menuStrip1.Size = new System.Drawing.Size(548, 24);
+            this.menuStrip1.Size = new System.Drawing.Size(1335, 24);
             this.menuStrip1.TabIndex = 0;
             this.menuStrip1.Text = "menuStrip1";
             // 
@@ -122,21 +127,21 @@
             // simpleToolStripMenuItem
             // 
             this.simpleToolStripMenuItem.Name = "simpleToolStripMenuItem";
-            this.simpleToolStripMenuItem.Size = new System.Drawing.Size(127, 22);
+            this.simpleToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
             this.simpleToolStripMenuItem.Text = "Simple";
             this.simpleToolStripMenuItem.Click += new System.EventHandler(this.SimpleToolStripMenuItem_Click);
             // 
             // advancesdToolStripMenuItem
             // 
             this.advancesdToolStripMenuItem.Name = "advancesdToolStripMenuItem";
-            this.advancesdToolStripMenuItem.Size = new System.Drawing.Size(127, 22);
+            this.advancesdToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
             this.advancesdToolStripMenuItem.Text = "Advanced";
             this.advancesdToolStripMenuItem.Click += new System.EventHandler(this.AdvancesdToolStripMenuItem_Click_1);
             // 
             // buttonField1
             // 
             this.buttonField1.Font = new System.Drawing.Font("Matura MT Script Capitals", 27.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.buttonField1.Location = new System.Drawing.Point(12, 80);
+            this.buttonField1.Location = new System.Drawing.Point(6, 64);
             this.buttonField1.Name = "buttonField1";
             this.buttonField1.Size = new System.Drawing.Size(65, 65);
             this.buttonField1.TabIndex = 1;
@@ -146,7 +151,7 @@
             // buttonField2
             // 
             this.buttonField2.Font = new System.Drawing.Font("Matura MT Script Capitals", 27.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.buttonField2.Location = new System.Drawing.Point(78, 80);
+            this.buttonField2.Location = new System.Drawing.Point(72, 64);
             this.buttonField2.Name = "buttonField2";
             this.buttonField2.Size = new System.Drawing.Size(65, 65);
             this.buttonField2.TabIndex = 2;
@@ -156,7 +161,7 @@
             // buttonField3
             // 
             this.buttonField3.Font = new System.Drawing.Font("Matura MT Script Capitals", 27.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.buttonField3.Location = new System.Drawing.Point(144, 80);
+            this.buttonField3.Location = new System.Drawing.Point(138, 64);
             this.buttonField3.Name = "buttonField3";
             this.buttonField3.Size = new System.Drawing.Size(65, 65);
             this.buttonField3.TabIndex = 3;
@@ -166,7 +171,7 @@
             // buttonField4
             // 
             this.buttonField4.Font = new System.Drawing.Font("Matura MT Script Capitals", 27.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.buttonField4.Location = new System.Drawing.Point(12, 146);
+            this.buttonField4.Location = new System.Drawing.Point(6, 130);
             this.buttonField4.Name = "buttonField4";
             this.buttonField4.Size = new System.Drawing.Size(65, 65);
             this.buttonField4.TabIndex = 4;
@@ -176,7 +181,7 @@
             // buttonField5
             // 
             this.buttonField5.Font = new System.Drawing.Font("Matura MT Script Capitals", 27.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.buttonField5.Location = new System.Drawing.Point(78, 146);
+            this.buttonField5.Location = new System.Drawing.Point(72, 130);
             this.buttonField5.Name = "buttonField5";
             this.buttonField5.Size = new System.Drawing.Size(65, 65);
             this.buttonField5.TabIndex = 5;
@@ -186,7 +191,7 @@
             // buttonField6
             // 
             this.buttonField6.Font = new System.Drawing.Font("Matura MT Script Capitals", 27.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.buttonField6.Location = new System.Drawing.Point(144, 146);
+            this.buttonField6.Location = new System.Drawing.Point(138, 130);
             this.buttonField6.Name = "buttonField6";
             this.buttonField6.Size = new System.Drawing.Size(65, 65);
             this.buttonField6.TabIndex = 6;
@@ -196,7 +201,7 @@
             // buttonField7
             // 
             this.buttonField7.Font = new System.Drawing.Font("Matura MT Script Capitals", 27.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.buttonField7.Location = new System.Drawing.Point(12, 212);
+            this.buttonField7.Location = new System.Drawing.Point(6, 196);
             this.buttonField7.Name = "buttonField7";
             this.buttonField7.Size = new System.Drawing.Size(65, 65);
             this.buttonField7.TabIndex = 7;
@@ -206,7 +211,7 @@
             // buttonField8
             // 
             this.buttonField8.Font = new System.Drawing.Font("Matura MT Script Capitals", 27.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.buttonField8.Location = new System.Drawing.Point(78, 212);
+            this.buttonField8.Location = new System.Drawing.Point(72, 196);
             this.buttonField8.Name = "buttonField8";
             this.buttonField8.Size = new System.Drawing.Size(65, 65);
             this.buttonField8.TabIndex = 8;
@@ -216,7 +221,7 @@
             // buttonField9
             // 
             this.buttonField9.Font = new System.Drawing.Font("Matura MT Script Capitals", 27.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.buttonField9.Location = new System.Drawing.Point(144, 212);
+            this.buttonField9.Location = new System.Drawing.Point(138, 196);
             this.buttonField9.Name = "buttonField9";
             this.buttonField9.Size = new System.Drawing.Size(65, 65);
             this.buttonField9.TabIndex = 9;
@@ -226,7 +231,7 @@
             // labelPlayerOneScore
             // 
             this.labelPlayerOneScore.AutoSize = true;
-            this.labelPlayerOneScore.Location = new System.Drawing.Point(9, 286);
+            this.labelPlayerOneScore.Location = new System.Drawing.Point(3, 270);
             this.labelPlayerOneScore.Name = "labelPlayerOneScore";
             this.labelPlayerOneScore.Size = new System.Drawing.Size(93, 13);
             this.labelPlayerOneScore.TabIndex = 10;
@@ -235,7 +240,7 @@
             // labelPlayerTwoScore
             // 
             this.labelPlayerTwoScore.AutoSize = true;
-            this.labelPlayerTwoScore.Location = new System.Drawing.Point(9, 311);
+            this.labelPlayerTwoScore.Location = new System.Drawing.Point(3, 295);
             this.labelPlayerTwoScore.Name = "labelPlayerTwoScore";
             this.labelPlayerTwoScore.Size = new System.Drawing.Size(91, 13);
             this.labelPlayerTwoScore.TabIndex = 11;
@@ -243,7 +248,7 @@
             // 
             // textPlayerOneName
             // 
-            this.textPlayerOneName.Location = new System.Drawing.Point(16, 40);
+            this.textPlayerOneName.Location = new System.Drawing.Point(10, 24);
             this.textPlayerOneName.Name = "textPlayerOneName";
             this.textPlayerOneName.Size = new System.Drawing.Size(100, 20);
             this.textPlayerOneName.TabIndex = 12;
@@ -251,7 +256,7 @@
             // 
             // textPlayerTwoName
             // 
-            this.textPlayerTwoName.Location = new System.Drawing.Point(122, 40);
+            this.textPlayerTwoName.Location = new System.Drawing.Point(116, 24);
             this.textPlayerTwoName.Name = "textPlayerTwoName";
             this.textPlayerTwoName.Size = new System.Drawing.Size(100, 20);
             this.textPlayerTwoName.TabIndex = 13;
@@ -260,7 +265,7 @@
             // labelPlayerOneName
             // 
             this.labelPlayerOneName.AutoSize = true;
-            this.labelPlayerOneName.Location = new System.Drawing.Point(13, 24);
+            this.labelPlayerOneName.Location = new System.Drawing.Point(7, 8);
             this.labelPlayerOneName.Name = "labelPlayerOneName";
             this.labelPlayerOneName.Size = new System.Drawing.Size(59, 13);
             this.labelPlayerOneName.TabIndex = 14;
@@ -269,7 +274,7 @@
             // labelPlayerTwoName
             // 
             this.labelPlayerTwoName.AutoSize = true;
-            this.labelPlayerTwoName.Location = new System.Drawing.Point(119, 24);
+            this.labelPlayerTwoName.Location = new System.Drawing.Point(113, 8);
             this.labelPlayerTwoName.Name = "labelPlayerTwoName";
             this.labelPlayerTwoName.Size = new System.Drawing.Size(60, 13);
             this.labelPlayerTwoName.TabIndex = 15;
@@ -278,7 +283,7 @@
             // labelPlayerTwoScoreShow
             // 
             this.labelPlayerTwoScoreShow.AutoSize = true;
-            this.labelPlayerTwoScoreShow.Location = new System.Drawing.Point(108, 311);
+            this.labelPlayerTwoScoreShow.Location = new System.Drawing.Point(102, 295);
             this.labelPlayerTwoScoreShow.Name = "labelPlayerTwoScoreShow";
             this.labelPlayerTwoScoreShow.Size = new System.Drawing.Size(13, 13);
             this.labelPlayerTwoScoreShow.TabIndex = 16;
@@ -287,7 +292,7 @@
             // labelPlayerOneScoreShow
             // 
             this.labelPlayerOneScoreShow.AutoSize = true;
-            this.labelPlayerOneScoreShow.Location = new System.Drawing.Point(108, 286);
+            this.labelPlayerOneScoreShow.Location = new System.Drawing.Point(102, 270);
             this.labelPlayerOneScoreShow.Name = "labelPlayerOneScoreShow";
             this.labelPlayerOneScoreShow.Size = new System.Drawing.Size(13, 13);
             this.labelPlayerOneScoreShow.TabIndex = 17;
@@ -296,7 +301,7 @@
             // buttonOnePlayer
             // 
             this.buttonOnePlayer.Font = new System.Drawing.Font("Matura MT Script Capitals", 27.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.buttonOnePlayer.Location = new System.Drawing.Point(12, 366);
+            this.buttonOnePlayer.Location = new System.Drawing.Point(6, 350);
             this.buttonOnePlayer.Name = "buttonOnePlayer";
             this.buttonOnePlayer.Size = new System.Drawing.Size(60, 60);
             this.buttonOnePlayer.TabIndex = 18;
@@ -307,7 +312,7 @@
             // labelPlayerCount
             // 
             this.labelPlayerCount.AutoSize = true;
-            this.labelPlayerCount.Location = new System.Drawing.Point(20, 350);
+            this.labelPlayerCount.Location = new System.Drawing.Point(14, 334);
             this.labelPlayerCount.Name = "labelPlayerCount";
             this.labelPlayerCount.Size = new System.Drawing.Size(101, 13);
             this.labelPlayerCount.TabIndex = 19;
@@ -316,7 +321,7 @@
             // buttonTwoPlayer
             // 
             this.buttonTwoPlayer.Font = new System.Drawing.Font("Matura MT Script Capitals", 27.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.buttonTwoPlayer.Location = new System.Drawing.Point(78, 366);
+            this.buttonTwoPlayer.Location = new System.Drawing.Point(72, 350);
             this.buttonTwoPlayer.Name = "buttonTwoPlayer";
             this.buttonTwoPlayer.Size = new System.Drawing.Size(60, 60);
             this.buttonTwoPlayer.TabIndex = 20;
@@ -326,41 +331,72 @@
             // 
             // textStatus
             // 
-            this.textStatus.Location = new System.Drawing.Point(228, 40);
+            this.textStatus.Location = new System.Drawing.Point(222, 6);
             this.textStatus.Multiline = true;
             this.textStatus.Name = "textStatus";
             this.textStatus.ReadOnly = true;
             this.textStatus.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
-            this.textStatus.Size = new System.Drawing.Size(308, 386);
+            this.textStatus.Size = new System.Drawing.Size(308, 361);
             this.textStatus.TabIndex = 21;
+            // 
+            // tabControl1
+            // 
+            this.tabControl1.Controls.Add(this.tabPage1);
+            this.tabControl1.Controls.Add(this.tabPage2);
+            this.tabControl1.Location = new System.Drawing.Point(0, 27);
+            this.tabControl1.Name = "tabControl1";
+            this.tabControl1.SelectedIndex = 0;
+            this.tabControl1.Size = new System.Drawing.Size(745, 447);
+            this.tabControl1.TabIndex = 22;
+            // 
+            // tabPage1
+            // 
+            this.tabPage1.Controls.Add(this.textStatus);
+            this.tabPage1.Controls.Add(this.buttonTwoPlayer);
+            this.tabPage1.Controls.Add(this.buttonField5);
+            this.tabPage1.Controls.Add(this.labelPlayerCount);
+            this.tabPage1.Controls.Add(this.buttonField1);
+            this.tabPage1.Controls.Add(this.buttonOnePlayer);
+            this.tabPage1.Controls.Add(this.buttonField2);
+            this.tabPage1.Controls.Add(this.labelPlayerOneScoreShow);
+            this.tabPage1.Controls.Add(this.buttonField3);
+            this.tabPage1.Controls.Add(this.labelPlayerTwoScoreShow);
+            this.tabPage1.Controls.Add(this.buttonField4);
+            this.tabPage1.Controls.Add(this.labelPlayerTwoName);
+            this.tabPage1.Controls.Add(this.buttonField6);
+            this.tabPage1.Controls.Add(this.labelPlayerOneName);
+            this.tabPage1.Controls.Add(this.buttonField7);
+            this.tabPage1.Controls.Add(this.textPlayerTwoName);
+            this.tabPage1.Controls.Add(this.buttonField8);
+            this.tabPage1.Controls.Add(this.textPlayerOneName);
+            this.tabPage1.Controls.Add(this.buttonField9);
+            this.tabPage1.Controls.Add(this.labelPlayerTwoScore);
+            this.tabPage1.Controls.Add(this.labelPlayerOneScore);
+            this.tabPage1.Location = new System.Drawing.Point(4, 22);
+            this.tabPage1.Name = "tabPage1";
+            this.tabPage1.Padding = new System.Windows.Forms.Padding(3);
+            this.tabPage1.Size = new System.Drawing.Size(737, 421);
+            this.tabPage1.TabIndex = 0;
+            this.tabPage1.Text = "tabPage1";
+            this.tabPage1.UseVisualStyleBackColor = true;
+            // 
+            // tabPage2
+            // 
+            this.tabPage2.Location = new System.Drawing.Point(4, 22);
+            this.tabPage2.Name = "tabPage2";
+            this.tabPage2.Padding = new System.Windows.Forms.Padding(3);
+            this.tabPage2.Size = new System.Drawing.Size(192, 74);
+            this.tabPage2.TabIndex = 1;
+            this.tabPage2.Text = "tabPage2";
+            this.tabPage2.UseVisualStyleBackColor = true;
             // 
             // TicTacToe
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.AutoSize = true;
-            this.ClientSize = new System.Drawing.Size(548, 438);
-            this.Controls.Add(this.textStatus);
-            this.Controls.Add(this.buttonTwoPlayer);
-            this.Controls.Add(this.labelPlayerCount);
-            this.Controls.Add(this.buttonOnePlayer);
-            this.Controls.Add(this.labelPlayerOneScoreShow);
-            this.Controls.Add(this.labelPlayerTwoScoreShow);
-            this.Controls.Add(this.labelPlayerTwoName);
-            this.Controls.Add(this.labelPlayerOneName);
-            this.Controls.Add(this.textPlayerTwoName);
-            this.Controls.Add(this.textPlayerOneName);
-            this.Controls.Add(this.labelPlayerTwoScore);
-            this.Controls.Add(this.labelPlayerOneScore);
-            this.Controls.Add(this.buttonField9);
-            this.Controls.Add(this.buttonField8);
-            this.Controls.Add(this.buttonField7);
-            this.Controls.Add(this.buttonField6);
-            this.Controls.Add(this.buttonField5);
-            this.Controls.Add(this.buttonField4);
-            this.Controls.Add(this.buttonField3);
-            this.Controls.Add(this.buttonField2);
-            this.Controls.Add(this.buttonField1);
+            this.ClientSize = new System.Drawing.Size(1335, 477);
+            this.Controls.Add(this.tabControl1);
             this.Controls.Add(this.menuStrip1);
             this.MainMenuStrip = this.menuStrip1;
             this.Name = "TicTacToe";
@@ -368,6 +404,9 @@
             this.Load += new System.EventHandler(this.TicTacToe_Load);
             this.menuStrip1.ResumeLayout(false);
             this.menuStrip1.PerformLayout();
+            this.tabControl1.ResumeLayout(false);
+            this.tabPage1.ResumeLayout(false);
+            this.tabPage1.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -405,6 +444,9 @@
         private System.Windows.Forms.ToolStripMenuItem simpleToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem advancesdToolStripMenuItem;
         private System.Windows.Forms.TextBox textStatus;
+        private System.Windows.Forms.TabControl tabControl1;
+        private System.Windows.Forms.TabPage tabPage1;
+        private System.Windows.Forms.TabPage tabPage2;
     }
 }
 

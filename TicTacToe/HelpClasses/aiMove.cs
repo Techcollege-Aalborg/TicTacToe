@@ -14,7 +14,7 @@ namespace TicTacToe
         public static bool canWin;
         public static Control moveCon;
         public static Int32[] yxPos;
-        private static string CurrentPlayer;
+        private static string currentPlayer;
 
         /// <summary>
         /// Match the PlayField coordinates with the correct - Form Button Control
@@ -128,7 +128,7 @@ namespace TicTacToe
         /// <param name="player">String from ENUM</param>
         public static bool CheckMove(PlayField board, Control.ControlCollection controls, string player)
         {
-            CurrentPlayer = player;
+            currentPlayer = player;
 
             // Set the symbols to look for
             lookFor = new string[] { "O", "X" };
@@ -180,7 +180,7 @@ namespace TicTacToe
             if (canWin)
             {
                 ControlMove(controls, yxPos);
-                moveCon.Text = CurrentPlayer.ToString();
+                moveCon.Text = currentPlayer.ToString();
                 moveCon.Enabled = false;
                 return;
             }
@@ -195,7 +195,7 @@ namespace TicTacToe
                     ControlMove(controls, yxPos);
                     if (moveCon.Text == "")
                     {
-                        moveCon.Text = CurrentPlayer.ToString();
+                        moveCon.Text = currentPlayer.ToString();
                         moveCon.Enabled = false;
                     }
                 } while (validate == false);
