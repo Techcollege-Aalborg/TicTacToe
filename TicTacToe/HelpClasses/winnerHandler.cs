@@ -16,17 +16,30 @@ namespace TicTacToe
         public static Control playerOneLabel;
         public static Control playerTwoLabel;
 
-        private  static void SetWinner(Control winnerLabel, Control winnerNameBox, string s)
+        /// <summary>
+        /// Display the winner and update the score
+        /// </summary>
+        /// <param name="winnerLabel">Score Label</param>
+        /// <param name="winnerNameBox">Textbox containing the name of the player</param>
+        /// <param name="winner"></param>
+        private  static void DisplayWinner(Control winnerLabel, Control winnerNameBox, string winner)
         {
             // Set the winner label
             winnerLabel.Text = (Int32.Parse(winnerLabel.Text) + 1).ToString();
 
             // Winner popup box
-            MessageBox.Show("The winner is " + s, "Winner Winner Chicken Dinner!");
+            MessageBox.Show("The winner is " + winner, "Winner Winner Chicken Dinner!");
 
             return;
         }
-        public static void EvaluateWinner(Control.ControlCollection con, string s)
+
+        /// <summary>
+        /// Used to set correct variables based on the winner
+        /// then calls to set a winner
+        /// </summary>
+        /// <param name="con">All controls in the form</param>
+        /// <param name="winner"></param>
+        public static void EvaluateWinner(Control.ControlCollection con, string winner) // New name??
         {
             // Gets the controls
             playerOneName = con.Find("textPlayerOneName", false).FirstOrDefault();
@@ -35,29 +48,29 @@ namespace TicTacToe
             playerTwoLabel = con.Find("labelPlayerTwoScoreShow", false).FirstOrDefault();
 
             // Based on winner X,O 
-            if (s == "X")
+            if (winner == "X")
             {
                 if (playerOneName.Text == "")
                 {
-                    winnerName = s;
+                    winnerName = winner;
                 }
                 else
                 {
                     winnerName = playerOneName.Text;
                 }
-                SetWinner(playerOneLabel, playerOneName, winnerName);
+                DisplayWinner(playerOneLabel, playerOneName, winnerName);
             }
-            if (s == "O")
+            if (winner == "O")
             {
                 if (playerTwoName.Text == "")
                 {
-                    winnerName = s;
+                    winnerName = winner;
                 }
                 else
                 {
                     winnerName = playerTwoName.Text;
                 }
-                SetWinner(playerTwoLabel, playerTwoName, winnerName);
+                DisplayWinner(playerTwoLabel, playerTwoName, winnerName);
             }
 
         }

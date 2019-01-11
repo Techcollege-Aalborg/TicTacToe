@@ -8,11 +8,11 @@ namespace TicTacToe
 {
     public static class Development
     {
-        public static string Test()
-        {
-            return "test";
-        }
-        
+        /// <summary>
+        /// Checks for a winner
+        /// </summary>
+        /// <param name="g"></param>
+        /// <returns>Winner - Possible: X,O</returns>
         public static string DicideWinner(PlayField g)
         {
             // Check every row
@@ -43,6 +43,11 @@ namespace TicTacToe
             return "";
         }
 
+        /// <summary>
+        /// Places a brick in the first availble (empty) field in the PlayField
+        /// </summary>
+        /// <param name="g"></param>
+        /// <returns>The number of the button to place the brick in</returns>
         public static string AIDicision(PlayField g)
         {
 
@@ -198,6 +203,11 @@ namespace TicTacToe
             return "";
         }
         
+        /// <summary>
+        /// REALLY OLD CODE!!!
+        /// Not Used!
+        /// Only here for educational/ reference purposes!
+        /// </summary>
         private static void OldCode()
         {
             /* WInner

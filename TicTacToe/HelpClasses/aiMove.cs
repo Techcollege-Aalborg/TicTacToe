@@ -1,16 +1,11 @@
 ﻿using System;
-using System.Collections.Generic;
 using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace TicTacToe
 {
     public static class AIMove
     {
-        public static bool canPlayerWin;
-        public static bool canAIWin;
         public static bool validate;
         public static string[] lookFor;
         public static int xCount;
@@ -21,27 +16,33 @@ namespace TicTacToe
         public static Int32[] yxPos;
         private static string CurrentPlayer;
 
-        public static void ControlMove(Control.ControlCollection controls, int[] pos)
+        /// <summary>
+        /// Match the PlayField coordinates with the correct - Form Button Control
+        /// and checks the field is empty
+        /// </summary>
+        /// <param name="controls">All form controls</param>
+        /// <param name="pos">PlayField xypos</param>
+        public static void ControlMove(Control.ControlCollection con, int[] pos)
         {
             // Set a variable with the control to make a move on
             if (pos[0] == 0 && pos[1] == 0)
-                moveCon = controls[20];
+                moveCon = con.Find("buttonField1", false).FirstOrDefault();
             if (pos[0] == 0 && pos[1] == 1)
-                moveCon = controls[19];
+                moveCon = con.Find("buttonField2", false).FirstOrDefault();
             if (pos[0] == 0 && pos[1] == 2)
-                moveCon = controls[18];
+                moveCon = con.Find("buttonField3", false).FirstOrDefault();
             if (pos[0] == 1 && pos[1] == 0)
-                moveCon = controls[17];
+                moveCon = con.Find("buttonField4", false).FirstOrDefault();
             if (pos[0] == 1 && pos[1] == 1)
-                moveCon = controls[16];
+                moveCon = con.Find("buttonField5", false).FirstOrDefault();
             if (pos[0] == 1 && pos[1] == 2)
-                moveCon = controls[15];
+                moveCon = con.Find("buttonField6", false).FirstOrDefault();
             if (pos[0] == 2 && pos[1] == 0)
-                moveCon = controls[14];
+                moveCon = con.Find("buttonField7", false).FirstOrDefault();
             if (pos[0] == 2 && pos[1] == 1)
-                moveCon = controls[13];
+                moveCon = con.Find("buttonField8", false).FirstOrDefault();
             if (pos[0] == 2 && pos[1] == 2)
-                moveCon = controls[12];
+                moveCon = con.Find("buttonField9", false).FirstOrDefault();
 
             if (moveCon.Text == "")
             {
@@ -52,13 +53,25 @@ namespace TicTacToe
             return;
         }
 
+        /// <summary>
+        /// Check to see if a player can win
+        /// </summary>
+        /// <param name="startX">Start X</param>
+        /// <param name="startY">Start Y</param>
+        /// <param name="board">PlayField Type</param>
+        /// <param name="dx">Directional X</param>
+        /// <param name="dy">Directional Y</param>
+        /// <param name="look">What symbol to look for (X,O)</param>
+        /// <returns>True/False if a opponent has a winning chance </returns>
         public static bool CheckFields(int startX, int startY, PlayField board, int dx, int dy, string look)
         {
+            // Reset Values/ Initialize variables
             xCount = 0;
             oCount = 0;
-            emptyCount = 0;
+            emptyCount = 0; // Is this used=???
             yxPos = new int[2];
 
+            // Loops through the playfield
             for (var i = 0; i < 3; i++)
             {
                 int y = startY + dy * i;
@@ -68,7 +81,7 @@ namespace TicTacToe
                 {
                     yxPos[0] = y;
                     yxPos[1] = x;
-                    emptyCount++;
+                    emptyCount++; // Is this used=??
                 } 
                 if (board.field[y, x] == "X")
                 {
@@ -95,62 +108,84 @@ namespace TicTacToe
             return false;
         }
 
+        /// <summary>
+        /// AI Move Invoke Handler
+        /// </summary>
+        /// <param name="board">PlayField Type</param>
+        /// <param name="controls">All form contorls</param>
+        /// <param name="player">String from ENUM</param>
         public static void Move(PlayField board, Control.ControlCollection controls, string player)
         {
+            CheckMove(board, controls, player);
+            MakeMove(controls);
+
+        }
+
+        /// <summary>
+        /// Checks for counter/winning moves
+        /// </summary>
+        /// <param name="board">PlayField Type</param>
+        /// <param name="controls">All form controls</param>
+        /// <param name="player">String from ENUM</param>
+        public static bool CheckMove(PlayField board, Control.ControlCollection controls, string player)
+        {
             CurrentPlayer = player;
+
+            // Set the symbols to look for
             lookFor = new string[] { "O", "X" };
 
-            // Check columns for winning moves
+            // Goes through all symbols in order
             foreach (string s in lookFor)
             {
+                // Check columns for counter/winning moves
                 for (var x = 0; x < board.field.GetLength(0); x++)
                 {
                     if (CheckFields(x, 0, board, 0, 1, s))
                     {
-                        MakeMove(canWin, controls);
-                        return;
+                        return true;
                     }
                 }
 
-                // Check rows for winning moves
+                // Check rows for counter/winning moves
                 for (var y = 0; y < board.field.GetLength(0); y++)
                 {
                     if (CheckFields(0, y, board, 1, 0, s))
                     {
-                        MakeMove(canWin, controls);
-                        return;
+                        return true;
                     }
                 }
 
-                // Check diagonals for winning moves
+                // Check diagonals for counter/winning moves
                 if (CheckFields(0, 0, board, 1, 1, s))
                 {
-                    // move(controls);
-                    MakeMove(canWin, controls);
-                    return;
+                    return true;
                 }
 
                 if (CheckFields(2, 0, board, -1, 1, s))
                 {
-                    // move(controls);
-                    MakeMove(canWin, controls);
-                    return;
+                    return true;
                 }
             }
-
-            MakeMove(canWin, controls);
-            return;
+            return false;
         }
 
-        public static void MakeMove(bool win, Control.ControlCollection controls)
+        /// <summary>
+        /// Makes a countermove/winning if canWin is true
+        /// else makes a random move to an empty brick
+        /// </summary>
+        /// <param name="win">If a player can win</param>
+        /// <param name="controls"></param>
+        public static void MakeMove(Control.ControlCollection controls)
         {
-            if (win)
+            // Counter/Winning move
+            if (canWin)
             {
                 ControlMove(controls, yxPos);
                 moveCon.Text = CurrentPlayer.ToString();
                 moveCon.Enabled = false;
                 return;
             }
+            // Random move
             else
             {
                 validate = false;
@@ -170,6 +205,12 @@ namespace TicTacToe
             }
         }
 
+        /// <summary>
+        /// Picks a random number between the provided scope
+        /// </summary>
+        /// <param name="min">Minimum number</param>
+        /// <param name="max">Maximum number</param>
+        /// <returns></returns>
         public static int RandomNumber(int min, int max)
         {
             Random random = new Random();

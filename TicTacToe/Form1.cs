@@ -374,13 +374,13 @@ namespace TicTacToe
         private void CheckForWinner()
         {
             // Check for a winner
-            string Result = CheckWinner.SomeoneWins(ExtractDataOfField());
+            string winner = CheckWinner.SomeoneWins(ExtractDataOfField());
 
             // Display winner
-            if (Result != "")
+            if (winner != "")
             {
-                var cons = this.Controls;
-                WinnerHandler.EvaluateWinner(cons, Result);
+                var con = this.Controls;
+                WinnerHandler.EvaluateWinner(con, winner);
                 ResetGame();
             }
         }

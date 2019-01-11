@@ -12,6 +12,12 @@ namespace TicTacToe
         // The tree values is; "X", "", "O"
         public string[,] field = new string[3,3]; 
 
+        /// <summary>
+        /// Extracts text data out of the "fields" buttons controls
+        /// and puts it into a PlayField Data Type.
+        /// Used for checking for a winner aswell as in deciding the AI's movess
+        /// </summary>
+        /// <param name="con"></param>
         public PlayField(Control.ControlCollection con) //Control.ControlCollection controls String[] Text
         {
             // Places the text from the created array into the playField.

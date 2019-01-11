@@ -8,8 +8,21 @@ namespace TicTacToe
 {
     public static class CheckWinner
     {
+        /// <summary>
+        /// Variable used to compare fields
+        /// </summary>
         public static string firstField;
 
+        /// <summary>
+        /// Used to check if all fields are the same 
+        /// in a row/ column
+        /// </summary>
+        /// <param name="startX">The start x pos</param>
+        /// <param name="startY">The start y pos</param>
+        /// <param name="board">The PlayField</param>
+        /// <param name="dx">Directional X pos</param>
+        /// <param name="dy">Directional Y pos</param>
+        /// <returns></returns>
         public static bool AllFieldsTheSame(int startX, int startY, PlayField board, int dx, int dy)
         {
             // Set first field for comparison
@@ -37,6 +50,12 @@ namespace TicTacToe
             return true;
         }
 
+        /// <summary>
+        /// Method responsible for checking for a winner
+        /// in every row/ column
+        /// </summary>
+        /// <param name="board"></param>
+        /// <returns></returns>
         public static string SomeoneWins(PlayField board)
         {
             // Check columns
